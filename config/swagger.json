@@ -1,0 +1,89 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "title": "testAPI"
+    },
+    "paths": {
+        "/test/me": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success response",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "response": {
+                                    "type": "string",
+                                    "default": "hello world"
+                                }
+                            }
+                        },
+                        "examples": {
+                            "application/json": {
+                                "response": "hello world"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "type": "string",
+                        "format": "",
+                        "default": "world"
+                    }
+                ]
+            }
+        },
+        "/login": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success response"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "type": "string",
+                        "format": "",
+                        "default": "bob"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "type": "string",
+                        "format": "",
+                        "default": "Password123"
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "GiveNewSchemaNameHere": {
+            "type": "object",
+            "properties": {
+                "response": {
+                    "type": "string",
+                    "default": "hello world"
+                }
+            }
+        }
+    }
+}
